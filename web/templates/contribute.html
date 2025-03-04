@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Contribute a Question</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('contribute') }}">
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            {{ form.subject.label(class="form-label") }}
+                            {{ form.subject(class="form-select") }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.grade.label(class="form-label") }}
+                            {{ form.grade(class="form-select") }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.question.label(class="form-label") }}
+                        {{ form.question(class="form-control", rows="3") }}
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            {{ form.option_a.label(class="form-label") }}
+                            {{ form.option_a(class="form-control") }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.option_b.label(class="form-label") }}
+                            {{ form.option_b(class="form-control") }}
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            {{ form.option_c.label(class="form-label") }}
+                            {{ form.option_c(class="form-control") }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.option_d.label(class="form-label") }}
+                            {{ form.option_d(class="form-control") }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.correct_answer.label(class="form-label") }}
+                        {{ form.correct_answer(class="form-select") }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.explanation.label(class="form-label") }}
+                        {{ form.explanation(class="form-control", rows="3") }}
+                    </div>
+
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        Contributing approved questions will earn you 20 coins!
+                    </div>
+
+                    <div class="d-grid">
+                        {{ form.submit(class="btn btn-primary") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

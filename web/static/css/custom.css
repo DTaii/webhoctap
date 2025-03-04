@@ -1,0 +1,87 @@
+/* Custom styles to complement Bootstrap */
+.quiz-card {
+    transition: transform 0.2s;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-badge {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bs-primary);
+    color: white;
+    margin: 10px;
+}
+
+.leaderboard-item {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background: var(--bs-dark);
+}
+
+.leaderboard-item:nth-child(1) {
+    background: var(--bs-warning);
+    color: var(--bs-dark);
+}
+
+.question-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.option-button {
+    width: 100%;
+    text-align: left;
+    margin: 10px 0;
+    padding: 15px;
+    border: 2px solid var(--bs-border-color);
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.option-button:hover {
+    background: var(--bs-primary);
+    color: white;
+}
+
+.correct-answer {
+    background: var(--bs-success) !important;
+    color: white;
+}
+
+.wrong-answer {
+    background: var(--bs-danger) !important;
+    color: white;
+}
+
+.coin-display {
+    font-size: 1.2rem;
+    color: var(--bs-warning);
+}
+
+.profile-section {
+    background: var(--bs-dark);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.shop-item {
+    border: 1px solid var(--bs-border-color);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: all 0.3s;
+}
+
+.shop-item:hover {
+    border-color: var(--bs-primary);
+}

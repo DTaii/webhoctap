@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <!-- User Profile Section -->
+    <div class="col-md-4">
+        <div class="profile-section">
+            <div class="text-center mb-4">
+                <i class="fas fa-user-circle fa-5x"></i>
+                <h3 class="mt-3">{{ current_user.username }}</h3>
+                <div class="coin-display">
+                    <i class="fas fa-coins"></i> {{ current_user.coins }} Coins
+                </div>
+                <div class="badge bg-primary mt-2">
+                    Rank: {{ current_user.rank }}
+                </div>
+            </div>
+            
+            <div class="achievements mt-4">
+                <h4>Achievements</h4>
+                <div class="d-flex flex-wrap justify-content-center">
+                    {% for progress in current_user.progress %}
+                    <div class="achievement-badge">
+                        <div>
+                            <small>{{ progress.subject }}</small>
+                            <div>{{ progress.correct_answers }}/{{ progress.total_attempts }}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Section -->
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="fas fa-trophy"></i> Leaderboard</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    {% for user in top_users %}
+                    <li class="leaderboard-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="me-2">{{ loop.index }}.</span>
+                            <i class="fas fa-user"></i>
+                            {{ user.username }}
+                        </div>
+                        <div>
+                            <i class="fas fa-coins text-warning"></i>
+                            {{ user.coins }}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

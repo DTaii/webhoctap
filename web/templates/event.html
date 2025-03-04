@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">Events</h2>
+
+    <!-- Event Leaderboard -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4><i class="fas fa-trophy"></i> Top 20 Players</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                            <th>Subject</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in range(20) %}
+                        <tr>
+                            <td>{{ i + 1 }}</td>
+                            <td>Player{{ i + 1 }}</td>
+                            <td>{{ 1000 - i * 30 }}</td>
+                            <td>Mathematics</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Events -->
+    <div class="card">
+        <div class="card-header">
+            <h4><i class="fas fa-calendar-alt"></i> Active Events</h4>
+        </div>
+        <div class="card-body">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <!-- Sample Event Cards -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Mathematics Championship</h5>
+                            <p class="card-text">Compete against other students in advanced mathematics!</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-clock"></i> Duration: 2 hours</li>
+                                <li><i class="fas fa-users"></i> Participants: 150/200</li>
+                                <li><i class="fas fa-trophy"></i> Prize Pool: 10,000 coins</li>
+                            </ul>
+                            <button class="btn btn-primary">Join Event</button>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Starts in 2 hours</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Science Quiz Bowl</h5>
+                            <p class="card-text">Test your knowledge across all science subjects!</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-clock"></i> Duration: 1.5 hours</li>
+                                <li><i class="fas fa-users"></i> Participants: 80/100</li>
+                                <li><i class="fas fa-trophy"></i> Prize Pool: 8,000 coins</li>
+                            </ul>
+                            <button class="btn btn-primary">Join Event</button>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Starts in 5 hours</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Question Management</h2>
+
+    <div class="card">
+        <div class="card-header">
+            <h4>Pending Questions</h4>
+        </div>
+        <div class="card-body">
+            {% if questions %}
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                            <th>Question</th>
+                            <th>Contributor</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for question in questions %}
+                        <tr>
+                            <td>{{ question.subject }}</td>
+                            <td>{{ question.grade }}</td>
+                            <td>
+                                <strong>{{ question.question_text }}</strong>
+                                <div class="mt-2">
+                                    <div>A) {{ question.option_a }}</div>
+                                    <div>B) {{ question.option_b }}</div>
+                                    <div>C) {{ question.option_c }}</div>
+                                    <div>D) {{ question.option_d }}</div>
+                                    <div class="text-success">Correct: {{ question.correct_answer }}</div>
+                                </div>
+                            </td>
+                            <td>{{ question.contributor.username }}</td>
+                            <td>
+                                <form action="{{ url_for('approve_question', id=question.id) }}" method="POST" class="d-inline">
+                                    <button type="submit" class="btn btn-success btn-sm">
+                                        <i class="fas fa-check"></i> Approve
+                                    </button>
+                                </form>
+                                <form action="{{ url_for('reject_question', id=question.id) }}" method="POST" class="d-inline">
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-times"></i> Reject
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="alert alert-info">No pending questions to review.</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+2. Giao diện ( dành cho admin )
+Trang đăng nhập cho admin:
+Cho nhập username admin và mật khẩu admin (tên: admin - pass: admin123)
+Bảng thống kê :
+Danh sách user .
+Danh sách câu hỏi ( theo từng lớp 10, 11, 12).
+Số lượng user mới đăng kí ( chọn theo mục : ngày , tuần, tháng).
+Số lượng câu hỏi mới đang chờ được duyệt ( chọn theo mục : ngày, tuần, tháng).
+Số lượng câu hỏi mới đã xuất bản ( chọn theo mục : ngày , tuần, tháng)
+Bảng xếp hạng user có số lượng câu trả lời nhiều nhất ( xếp theo tháng,mỗi thánh cập nhật 1 lần vào ngày đầu tiên của tháng mới, bảng xếp hạng hạn từ 1 đến 20 , nếu cùng điểm số thì xếp cùng hạng )
+Bảng xếp hạng user có số lượng đóng góp câu hỏi nhiều      nhất (xếp theo tháng,mỗi thánh cập nhật 1 lần vào ngày đầu tiên của tháng mới, bảng xếp hạng hạn từ 1 đến 20 , nếu cùng điểm số thì xếp cùng hạng  )
+Tạo event :
+I. Giao diện (UI)
+Trang Quản lý Cuộc Thi (Contest Dashboard)
+- Danh sách cuộc thi hiện có : Hiển thị dạng bảng với các thông tin: Tên cuộc thi, trạng thái (đang mở, đã đóng, sắp tới), số người tham gia, thời gian diễn ra.
+- Nút "Tạo Cuộc Thi Mới": Dẫn đến form thiết lập cuộc thi.
+- Tính năng phụ: 
+  - Lọc cuộc thi theo trạng thái, danh mục.
+  - Tìm kiếm bằng tên cuộc thi.
+  - Tùy chọn chỉnh sửa/xóa/sao chép cuộc thi cũ.
+ 2. Form Tạo Cuộc Thi
+Form được chia thành các bước/tab để dễ điều hướng:
+
+Bước 1: Thông tin Cơ bản
+- Trường nhập liệu:
+  - Tên cuộc thi (bắt buộc).
+  - Mô tả (sử dụng trình soạn thảo WYSIWYG).
+  - Thời gian bắt đầu/kết thúc (có chọn múi giờ).
+  - Thời lượng (nếu là thi tự do).
+- Tùy chọn nâng cao :
+  - Ẩn cuộc thi trước giờ bắt đầu.
+  - Cho phép đăng ký tự do hoặc duyệt thủ công.
+Bước 2: Thêm Câu Hỏi
+- Giao diện chính :
+    - Question Bank : Hiển thị câu hỏi từ ngân hàng có sẵn, có thể lọc theo chủ đề, độ khó, loại (trắc nghiệm, tự luận, coding).
+    - Nút "Thêm Câu Hỏi Mới": Mở form tạo câu hỏi với các trường:
+    - Loại câu hỏi (trắc nghiệm).
+    - Điểm số, độ khó.
+    - Nội dung câu hỏi (hỗ trợ hình ảnh/file đính kèm).
+    - Đáp án đúng (với trắc nghiệm).
+    - Kéo-thả để sắp xếp thứ tự câu hỏi.
+- Tính năng :
+  - Thiết lập thời gian giới hạn cho từng câu.
+  - Phân loại câu hỏi thành phần (ví dụ: Toán, Lý,hóa, sinh, văn , sử, địa).
+Bước 3: Thiết lập Quyền Truy Cập
+- Chọn đối tượng tham gia :
+  - Công khai (mọi người dùng).
+  - Riêng tư (chọn từng người/nhóm từ danh sách).
+- Cài đặt đăng ký:
+  - Thời hạn đăng ký.
+  - Yêu cầu phê duyệt tham gia.
+Bước 4: Cấu hình Điểm và Xếp Hạng
+- Thang điểm : 
+  - Điểm cộng cho câu đúng, điểm trừ cho câu sai (tùy chỉnh).
+  - Bonus thời gian (nếu có).
+- Hiển thị kết quả : 
+  - Ngay sau khi nộp bài / Sau khi cuộc thi kết thúc.
+  - Hiển thị bảng xếp hạng công khai.
+Bước 5: Xem trước và Xuất bản
+- Xem trước : Hiển thị giao diện cuộc thi như người dùng.
+- Nút "Lưu Bản Nháp" hoặc "Xuất bản".
+                         II. Cách thức Hoạt động (Functionality)
+     1. Quy trình Tạo Cuộc Thi
+    1. Nhập thông tin cơ bản : Hệ thống validate các trường bắt buộc (tên, thời gian).
+    2. Thêm câu hỏi : 
+       - Câu hỏi mới được lưu vào ngân hàng để tái sử dụng.
+       - Hỗ trợ import câu hỏi từ file CSV/Excel.
+    3. Thiết lập quyền truy cập : Gửi thông báo tự động đến người được chọn.
+    4. Cấu hình điểm : Tính toán tự động tổng điểm tối đa.
+    5. Xuất bản : Hệ thống kiểm tra tính hợp lệ (ví dụ: có ít nhất 5 câu hỏi) trước khi publish.
+ 2. Tính năng Hỗ trợ
+- Lưu tự động (Auto-save) : Tránh mất dữ liệu khi có sự cố.
+- Theo dõi thời gian thực : Hiển thị số người đang tham gia, bài nộp mới nhất.
+ 3. Quản lý Sau khi Xuất bản
+- Thống kê : Biểu đồ hiển thị phổ điểm, tỷ lệ trả lời đúng từng câu.
+- Hủy/Chỉnh sửa : Có thể đóng cuộc thi sớm hoặc sửa thời gian (nếu chưa bắt đầu).
+- Xuất dữ liệu : Tải về danh sách điểm, bài nộp dạng CSV/PDF.
+Duyệt bài : khi admin bấm vào thì cho xem câu hỏi và thông tin cơ bản của câu hỏi như lớp, độ khó, môn và nếu admin thấy ok thì bấm chấp nhận, không thì từ chối, từ chối đồng nghĩa với user không được xu nào, nếu chấp nhận thì lưu vào database câu hỏi phục vụ cho phân chia câu hỏi để vào phòng thi sau này.
+3.  tính năng
+Vật phẩm :
+ 50/50 : bỏ ngẫu nhiên 2 câu sai
+ bỏ qua 1 câu (bỏ qua 1 câu nhưng vẫn cộng thêm xu theo cấp độ)     
+ Boost 20% xu nhận được : người chơi sẽ được chọn sử dụng hoặc không sử dụng trước mỗi lần bắt đầu vào phòng thi, nếu sử dụng người chơi sẽ nhận thêm 20% tổng số xu sau khi thi
+ Miễn phí vào cổng : được miễn phí vé vào phòng thi ở kì độ khó nào
+Gacha:
+01.Hiệu ứng gacha là chọn một cái bánh quy may mắn, cho hiện ra 8 cái bánh quy rồi cho user chọn 1 trong 8 cái          

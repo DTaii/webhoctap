@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">Shop</h2>
+
+    <!-- Help Items -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4><i class="fas fa-magic"></i> Quiz Helpers</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="shop-item">
+                        <h5><i class="fas fa-percentage"></i> 50/50 Help</h5>
+                        <p>Removes two wrong answers from the options</p>
+                        <button class="btn btn-primary" onclick="purchaseItem('fifty_fifty', 100)">
+                            Buy for 100 <i class="fas fa-coins text-warning"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="shop-item">
+                        <h5><i class="fas fa-forward"></i> Skip Question</h5>
+                        <p>Skip one question but still get the points</p>
+                        <button class="btn btn-primary" onclick="purchaseItem('skip', 150)">
+                            Buy for 150 <i class="fas fa-coins text-warning"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gacha System -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4><i class="fas fa-gift"></i> Lucky Draw</h4>
+        </div>
+        <div class="card-body">
+            <div class="shop-item text-center">
+                <h5>Try Your Luck!</h5>
+                <p>Get random rewards including boosts, free entries, and more!</p>
+                <button class="btn btn-warning" onclick="purchaseItem('gacha', 200)">
+                    Roll for 200 <i class="fas fa-coins text-warning"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coin Exchange -->
+    <div class="card">
+        <div class="card-header">
+            <h4><i class="fas fa-exchange-alt"></i> Exchange Coins</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="shop-item text-center">
+                        <h5>10,000 <i class="fas fa-coins text-warning"></i></h5>
+                        <p>= 10,000 VND</p>
+                        <button class="btn btn-success" onclick="purchaseItem('exchange_10k', 10000)">
+                            Exchange
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="shop-item text-center">
+                        <h5>50,000 <i class="fas fa-coins text-warning"></i></h5>
+                        <p>= 50,000 VND</p>
+                        <button class="btn btn-success" onclick="purchaseItem('exchange_50k', 50000)">
+                            Exchange
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="shop-item text-center">
+                        <h5>100,000 <i class="fas fa-coins text-warning"></i></h5>
+                        <p>= 100,000 VND</p>
+                        <button class="btn btn-success" onclick="purchaseItem('exchange_100k', 100000)">
+                            Exchange
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

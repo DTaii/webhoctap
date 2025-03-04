@@ -1,0 +1,41 @@
+phần mềm học tập trả lời câu hỏi
+1.   giao diện ( dành cho user )
+-Mô tả giao diện chính của tất cả các page: 
+-Header:bao gồm logo, tên web, và thanh điều hướng: bắt đầu chơi(mainquiz.html), đóng góp(contribute.html), event(event.html), cửa hàng(shop.html), đăng nhập(login.html), nếu đã đăng nhập rồi thì chuyển sang nút đăng xuất và kế bên là avatar user (user.png).
+-Main Content: Hiển thị nội dung chính của trang nhỏ.
+-Footer: Chứa thông tin liên hệ, bản quyền hoặc link liên hệ
+         Mô tả giao diện login.html:
+Nếu chưa có tài khoản thì sẽ bấm đăng ký, đăng ký gồm tên user, gmail, nhập mật khẩu, nhập lại mật khẩu, đồng ý điều khoản và nút đăng ký và lưu vào database tránh trùng lặp tên user,gmail
+Đã có tài khoản thì đăng nhập bằng email hoặc username, và mật khẩu sau đó đăng nhập. Sau khi đăng nhập chuyển tới trang homepage.html
+Mô tả giao diện homepage.html:
+Bên trái màn hình là thông tin của user như tên, số xu, rank, những thành tựu đạt được.
+Bên phải màn hình là leaderboard các user có số xu nhiều nhất, user có đóng góp nhiều nhất, số user online nhiều giờ nhất.
+Mô tả giao diện chính mainquiz.html: 
+-Môn học : Toán, văn, hóa, lí, sinh, sử, địa, giáo dục kinh tế pháp luật,tin học
+-Sau khi chọn xong sẽ vào phòng thi và chọn độ khó từ dễ, trung bình và khó. Dễ thì phí vào sẽ 10xu trả lời đúng 1 câu thì 5xu và tổng có 10 câu nếu đúng hết 10 câu thì +thêm 10xu, trung bình thì phí vào sẽ 25xu trả lời đúng 1 câu thì 10xu và tổng có 10 câu nếu đúng hết 10 câu thì +thêm 25xu, khó thì phí vào sẽ 50xu trả lời đúng 1 câu thì 15xu và tổng có 10 câu nếu đúng hết 10 câu thì +thêm 50 xu.
+(trong mỗi môn học sẽ có phân cấp gồm 3 cấp tương ứng từ lớp 10 đến lớp 12 ; trong mỗi lớp sẽ có vô số câu hỏi đã có đáp án được người dùng gửi về )
+Mô tả giao diện contribute.html: 
+-Phần đóng góp gồm các mục chọn môn, lớp, câu hỏi, nhập 4 câu a,b,c,d, chọn câu đúng, giải thích
+- chức năng: sau khi đóng góp xong thì chờ admin duyệt, nếu duyệt oke thì + cho người dùng 20xu
+         Mô tả giao diện event.html:
+-Mục này có trên trang chủ, những người dùng sẽ vào được khi admin tổ chức một cuộc thi nào đó tại mục “tạo event” ở trang admin
+-Tổ chức các cuộc thi theo khối để trao thưởng
+-User có thể chọn tham gia cuộc thi khi nhấp vào cuộc thi ở danh sách các cuộc thi
+-Giao diện :
++1 bảng xếp hạng gồm 20 các user có số điểm có số điểm cao nhất
++1 danh sách các cuộc thi sắp hoặc đang diễn ra theo thời gian thực.
+Mô tả giao diện shop.html:
+1.   vật phẩm :
+A.  các quyền trợ giúp :
+01.  50/50 (loại bỏ 2 câu sai)
+02.  bỏ qua 1 câu (bỏ qua 1 câu nhưng vẫn cộng thêm xu theo cấp độ)               	
+2.   gacha :
+01.  Chúc bạn một ngày vui vẻ
+02.  50/50
+03.  Bỏ qua 1 câu
+04.  Boost 20% xu nhận được
+05.  Miễn phí vào cổng
+3.   đổi thưởng :
+A.  10 000 xu = 10 000 đồng (quy đổi bằng thẻ cào)
+B.  50 000 xu = 50 000 đồng
+C.  100 000 xu = 100 000 đồng
